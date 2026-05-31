@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta name="description" content="Website Resmi SMA Negeri 19 Kota Bekasi — Mewujudkan generasi emas yang cerdas, berkarakter, dan berwawasan luas.">
+  <meta property="og:title" content="SMA Negeri 19 Kota Bekasi">
+  <meta property="og:description" content="Website Resmi SMA Negeri 19 Kota Bekasi">
+  <meta property="og:image" content="https://www.sman19kotabekasi.sch.id/upload/imagecache/46187746logo19-600x600.jpg">
+  <title>SMA Negeri 19 Kota Bekasi</title>
+
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&display=swap" rel="stylesheet"/>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary:   "#0f172a",
+            gold:      "#b45309",
+            "gold-lt": "#fef3c7",
+            surface:   "#ffffff",
+            muted:     "#64748b",
+            border:    "#e2e8f0",
+          },
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ── Base ── */
+    body {
+      background-color: #f8fafc;
+      background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='3' cy='3' r='1.4' fill='%2394a3b8' fill-opacity='.13'/%3E%3C/svg%3E");
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Skeleton Loader ── */
+    .sk { position:relative; overflow:hidden; background:#e2e8f0; color:transparent!important; border-color:transparent!important; pointer-events:none; user-select:none; border-radius:inherit; }
+    .sk *{ visibility:hidden; }
+    .sk::after { content:''; position:absolute; inset:0; transform:translateX(-100%); background:linear-gradient(90deg,rgba(255,255,255,0) 0,rgba(255,255,255,.6) 40%,rgba(255,255,255,0) 100%); animation:shimmer 1.6s infinite; }
+    @keyframes shimmer { to { transform:translateX(100%); } }
+
+    /* ── Scroll reveal ── */
+    .reveal { opacity:0; transform:translateY(36px); transition:opacity .75s cubic-bezier(.16,1,.3,1), transform .75s cubic-bezier(.16,1,.3,1); }
+    .reveal.in { opacity:1; transform:none; }
+
+    /* ── Misc ── */
+    .logo-dark  { mix-blend-mode:multiply; filter:contrast(1.05); }
+    .logo-white { filter:brightness(0) invert(1); }
+    .text-gold-grad { background:linear-gradient(135deg,#92400e,#b45309); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .prose-dark-grad { background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width:7px; }
+    ::-webkit-scrollbar-track { background:transparent; }
+    ::-webkit-scrollbar-thumb { background:#cbd5e1; border-radius:10px; }
+    ::-webkit-scrollbar-thumb:hover { background:#94a3b8; }
+
+    /* ── Mobile menu ── */
+    #mob-menu { max-height:0; opacity:0; overflow:hidden; transition:max-height .35s cubic-bezier(.4,0,.2,1), opacity .25s ease; }
+    #mob-menu.open { max-height:520px; opacity:1; border-top:1px solid rgba(203,213,225,.3); }
+
+    /* ── Jalur card hover ── */
+    .jalur-card { transition:transform .3s ease, box-shadow .3s ease; }
+    .jalur-card:hover { transform:translateY(-4px); box-shadow:0 20px 40px rgba(15,23,42,.1); }
+
+    /* ── News card ── */
+    .news-img { transition:transform .6s cubic-bezier(.16,1,.3,1); }
+    .group:hover .news-img { transform:scale(1.06); }
+
+    /* ── Tag badge ── */
+    .tag { font-size:.65rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+
+    /* ── Gold badge ── */
+    .gold-badge { background:linear-gradient(135deg,#b45309,#d97706); color:#fff; }
+  </style>
+</head>
+<body class="text-primary font-sans">
+
+<!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+<header id="topbar" class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-border shadow-sm transition-shadow">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between h-[72px]">
+
+    <!-- Logo -->
+    <a href="https://www.sman19kotabekasi.sch.id/" class="flex items-center gap-3 group sk-target sk rounded-xl pr-2">
+      <img src="https://www.sman19kotabekasi.sch.id/upload/imagecache/46187746logo19-100x100.jpg"
+           alt="Logo SMAN 19 Kota Bekasi"
+           class="h-11 w-auto logo-dark group-hover:scale-105 transition-transform duration-300"/>
+      <div class="leading-tight">
+        <div class="text-[11px] font-semibold text-muted tracking-wider uppercase">SMA Negeri</div>
+        <div class="text-lg font-extrabold tracking-tight text-primary">19 Kota Bekasi</div>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden lg:flex items-center gap-1 text-[13px] font-semibold sk-target sk rounded-xl px-2 py-1">
+      <a href="#" class="px-3 py-1.5 rounded-lg text-gold border-b-2 border-gold">Beranda</a>
+      <div class="relative group/nav">
+        <a href="https://www.sman19kotabekasi.sch.id/profil" class="px-3 py-1.5 rounded-lg text-muted hover:text-primary hover:bg-slate-100 transition-colors flex items-center gap-1">
+          Profil <span class="material-symbols-outlined text-sm" style="font-size:14px">expand_more</span>
+        </a>
+        <div class="absolute top-full left-0 mt-1 w-48 bg-white rounded-xl shadow-xl border border-border overflow-hidden opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all duration-200 z-50">
+          <a href="https://www.sman19kotabekasi.sch.id/profil-sekolah" class="block px-4 py-2.5 text-[12px] hover:bg-slate-50 hover:text-gold transition-colors">Profil Sekolah</a>
+          <a href="https://www.sman19kotabekasi.sch.id/visi-dan-misi" class="block px-4 py-2.5 text-[12px] hover:bg-slate-50 hover:text-gold transition-colors">Visi dan Misi</a>
+          <a href="https://www.sman19kotabekasi.sch.id/struktur-organisasi" class="block px-4 py-2.5 text-[12px] hover:bg-slate-50 hover:text-gold transition-colors">Struktur Organisasi</a>
+        </div>
+      </div>
+      <div class="relative group/nav">
+        <a href="https://www.sman19kotabekasi.sch.id/kesiswaan" class="px-3 py-1.5 rounded-lg text-muted hover:text-primary hover:bg-slate-100 transition-colors flex items-center gap-1">
+          Kesiswaan <span class="material-symbols-outlined" style="font-size:14px">expand_more</span>
+        </a>
+        <div class="absolute top-full left-0 mt-1 w-44 bg-white rounded-xl shadow-xl border border-border overflow-hidden opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all duration-200 z-50">
+          <a href="https://www.sman19kotabekasi.sch.id/ekstrakurikuler" class="block px-4 py-2.5 text-[12px] hover:bg-slate-50 hover:text-gold transition-colors">Ekstrakurikuler</a>
+          <a href="https://www.sman19kotabekasi.sch.id/osis" class="block px-4 py-2.5 text-[12px] hover:bg-slate-50 hover:text-gold transition-colors">OSIS</a>
+        </div>
+      </div>
+      <a href="https://www.sman19kotabekasi.sch.id/berita" class="px-3 py-1.5 rounded-lg text-muted hover:text-primary hover:bg-slate-100 transition-colors">Berita</a>
+      <a href="https://www.sman19kotabekasi.sch.id/galeri" class="px-3 py-1.5 rounded-lg text-muted hover:text-primary hover:bg-slate-100 transition-colors">Galeri</a>
+      <a href="https://www.sman19kotabekasi.sch.id/kontak" class="px-3 py-1.5 rounded-lg text-muted hover:text-primary hover:bg-slate-100 transition-colors">Kontak</a>
+    </nav>
+
+    <!-- CTA -->
+    <div class="hidden lg:flex items-center gap-3 sk-target sk rounded-full">
+      <a href="https://www.sman19kotabekasi.sch.id/spmb-sman-19-kota-bekasi"
+         class="gold-badge rounded-full px-5 py-2.5 text-[13px] font-bold hover:opacity-90 hover:scale-105 shadow-lg transition-all duration-300 flex items-center gap-2">
+        <span class="material-symbols-outlined text-base" style="font-size:16px">how_to_reg</span>
+        Info SPMB 2026
+      </a>
+    </div>
+
+    <!-- Hamburger -->
+    <button id="ham-btn" class="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors sk-target sk" aria-label="Menu">
+      <span id="ham-icon" class="material-symbols-outlined text-3xl text-primary">menu</span>
+    </button>
+  </div>
+
+  <!-- Mobile dropdown -->
+  <div id="mob-menu" class="lg:hidden bg-white/95 backdrop-blur-xl absolute w-full left-0 top-[72px] shadow-2xl z-40">
+    <div class="flex flex-col px-6 py-5 gap-1 text-[15px] font-semibold">
+      <a href="#" class="px-3 py-2.5 rounded-xl text-gold bg-amber-50">Beranda</a>
+      <a href="https://www.sman19kotabekasi.sch.id/profil" class="px-3 py-2.5 rounded-xl text-muted hover:text-primary hover:bg-slate-50 transition-colors">Profil</a>
+      <a href="https://www.sman19kotabekasi.sch.id/kesiswaan" class="px-3 py-2.5 rounded-xl text-muted hover:text-primary hover:bg-slate-50 transition-colors">Kesiswaan</a>
+      <a href="https://www.sman19kotabekasi.sch.id/berita" class="px-3 py-2.5 rounded-xl text-muted hover:text-primary hover:bg-slate-50 transition-colors">Berita</a>
+      <a href="https://www.sman19kotabekasi.sch.id/galeri" class="px-3 py-2.5 rounded-xl text-muted hover:text-primary hover:bg-slate-50 transition-colors">Galeri</a>
+      <a href="https://www.sman19kotabekasi.sch.id/kontak" class="px-3 py-2.5 rounded-xl text-muted hover:text-primary hover:bg-slate-50 transition-colors">Kontak</a>
+      <a href="https://www.sman19kotabekasi.sch.id/spmb-sman-19-kota-bekasi"
+         class="mt-2 gold-badge rounded-full px-4 py-3 text-center font-bold shadow-md flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined" style="font-size:18px">how_to_reg</span>
+        Info SPMB 2026
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-5 md:px-10 py-12 md:py-20 flex flex-col gap-24 md:gap-32 overflow-hidden">
+
+  <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+  <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-center reveal">
+    <div class="lg:col-span-6 flex flex-col gap-6 order-2 lg:order-1">
+      <div class="sk-target sk rounded-full w-fit">
+        <span class="inline-flex items-center gap-2 bg-amber-50 text-gold border border-amber-200 px-4 py-2 rounded-full text-xs font-bold tracking-wider uppercase">
+          <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1">verified</span>
+          Akreditasi A — Unggul
+        </span>
+      </div>
+
+      <div class="sk-target sk rounded-2xl">
+        <h1 class="text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight leading-[1.15] prose-dark-grad py-1">
+          Membentuk Generasi Emas SMAN 19 Kota Bekasi
+        </h1>
+      </div>
+
+      <div class="sk-target sk rounded-xl">
+        <p class="text-base md:text-lg text-muted max-w-xl leading-relaxed">
+          Menjadi lembaga pendidikan unggulan yang adaptif — mencetak insan akademis berkarakter, berprestasi, dan berwawasan luas sesuai standar nasional di bawah Kurikulum Merdeka.
+        </p>
+      </div>
+
+      <div class="sk-target sk rounded-full flex flex-col sm:flex-row gap-3 mt-2">
+        <a href="https://www.sman19kotabekasi.sch.id/spmb-sman-19-kota-bekasi"
+           class="gold-badge rounded-full px-8 py-4 text-sm font-bold shadow-lg hover:opacity-90 hover:-translate-y-1 transition-all duration-300 flex justify-center items-center gap-2 group">
+          Info SPMB 2026
+          <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" style="font-size:18px">arrow_forward</span>
+        </a>
+        <a href="https://www.sman19kotabekasi.sch.id/profil-sekolah"
+           class="bg-white text-primary border-2 border-border hover:border-primary rounded-full px-8 py-4 text-sm font-bold transition-all duration-300 flex justify-center items-center gap-2 hover:-translate-y-1">
+          <span class="material-symbols-outlined" style="font-size:18px">school</span>
+          Profil Sekolah
+        </a>
+      </div>
+    </div>
+
+    <div class="lg:col-span-6 order-1 lg:order-2 relative w-full h-[320px] md:h-[480px] rounded-[2rem] overflow-hidden shadow-2xl border border-border/40 sk-target sk">
+      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-[1.2s] hover:scale-105"
+           style="background-image:url('https://lh3.googleusercontent.com/aida/ADBb0uhVtcpsjkMVY8iA6_BVtcNdsxDAELgip-vuWyXOWuJubJJLIqWGaZ5vgfdiseLncgK2Dgi9kJQfAZNA3bNIsWFY4WXwTCK9ilGV7SIJvHnNcf6x2LAwbJhCXv-huDYmnQJxM2eOi-ErbqLHUrz8zM7xi9Y_q92x4NZqKcOgtYvl22yPr-E0QdKonyGt1bQlpU4knIYxWHeFJj1zkQXKtC5Z2tJnlyRPyEUv-v2jtvUOJWWq360PskNcOjs')">
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent"></div>
+      <!-- Floating badge -->
+      <div class="absolute bottom-5 left-5 bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-3 shadow-xl flex items-center gap-3">
+        <div class="w-10 h-10 gold-badge rounded-xl flex items-center justify-center">
+          <span class="material-symbols-outlined text-white" style="font-size:20px;font-variation-settings:'FILL' 1">emoji_events</span>
+        </div>
+        <div>
+          <div class="text-[11px] text-muted font-medium">Prestasi 2025–2026</div>
+          <div class="text-[13px] font-bold text-primary">FLS3N & OSN Kota Bekasi</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ STATS ═══════════════════════════════ -->
+  <section class="grid grid-cols-2 lg:grid-cols-4 gap-4 reveal">
+    <div class="bg-white border border-border rounded-3xl p-6 flex flex-col gap-1 shadow-sm hover:shadow-md transition-shadow sk-target sk">
+      <div class="text-gold mb-1"><span class="material-symbols-outlined text-4xl" style="font-variation-settings:'FILL' 1">groups</span></div>
+      <div class="text-3xl font-black text-primary">1.043</div>
+      <div class="text-xs font-bold text-muted">Siswa Aktif</div>
+    </div>
+    <div class="bg-white border border-border rounded-3xl p-6 flex flex-col gap-1 shadow-sm hover:shadow-md transition-shadow sk-target sk">
+      <div class="text-primary mb-1"><span class="material-symbols-outlined text-4xl" style="font-variation-settings:'FILL' 1">local_library</span></div>
+      <div class="text-3xl font-black text-primary">50</div>
+      <div class="text-xs font-bold text-muted">Pendidik & Tendik</div>
+    </div>
+    <div class="bg-white border border-border rounded-3xl p-6 flex flex-col gap-1 shadow-sm hover:shadow-md transition-shadow sk-target sk">
+      <div class="text-gold mb-1"><span class="material-symbols-outlined text-4xl" style="font-variation-settings:'FILL' 1">meeting_room</span></div>
+      <div class="text-3xl font-black text-primary">29</div>
+      <div class="text-xs font-bold text-muted">Ruang Kelas</div>
+    </div>
+    <div class="bg-primary text-white rounded-3xl p-6 flex flex-col gap-1 shadow-sm hover:shadow-md transition-shadow sk-target sk">
+      <div class="mb-1"><span class="material-symbols-outlined text-4xl" style="font-variation-settings:'FILL' 1">star</span></div>
+      <div class="text-2xl font-black">Akreditasi</div>
+      <div class="text-xs font-bold text-slate-300">Peringkat "A" — 2023</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ SAMBUTAN ═══════════════════════════════ -->
+  <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal">
+    <!-- Principal photo -->
+    <div class="relative flex justify-center lg:justify-start">
+      <div class="relative w-64 h-72 md:w-80 md:h-96 sk-target sk rounded-[2.5rem]">
+        <img src="https://www.sman19kotabekasi.sch.id/upload/imagecache/51614544Kepsek-300x300.png"
+             alt="Kepala Sekolah SMAN 19 Kota Bekasi — Siwi Widyasaputri, S.Pd., M.Pd."
+             class="w-full h-full object-cover object-top rounded-[2.5rem] shadow-xl border-4 border-white"/>
+        <!-- Name card overlay -->
+        <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 w-[calc(100%-24px)] bg-primary text-white rounded-2xl px-5 py-3 shadow-2xl text-center">
+          <div class="text-[13px] font-bold">Siwi Widyasaputri, S.Pd., M.Pd.</div>
+          <div class="text-[10px] text-slate-400 mt-0.5 font-mono">Kepala Sekolah · NIP. 197405142006042011</div>
+        </div>
+      </div>
+      <!-- Decorative ring -->
+      <div class="absolute -z-10 top-6 left-6 w-64 h-72 md:w-80 md:h-96 rounded-[2.5rem] border-2 border-amber-200 opacity-60"></div>
+    </div>
+
+    <!-- Text -->
+    <div class="flex flex-col gap-5 pt-8 lg:pt-0">
+      <span class="w-fit text-xs font-bold text-gold uppercase tracking-widest bg-amber-50 border border-amber-200 px-4 py-1.5 rounded-full">
+        Sambutan Kepala Sekolah
+      </span>
+      <h2 class="text-3xl md:text-4xl font-extrabold leading-tight text-primary">
+        Selamat Datang di<br/>SMAN 19 Kota Bekasi
+      </h2>
+      <p class="text-muted leading-relaxed">
+        Sebagai lembaga pendidikan, SMA Negeri 19 Kota Bekasi tanggap dengan perkembangan teknologi. Dengan dukungan SDM yang dimiliki, sekolah ini siap berkompetisi dalam pelayanan informasi publik yang cepat, jelas, dan akuntabel.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Melalui Kurikulum Merdeka, kami berkomitmen mencetak lulusan yang berkarakter Profil Pelajar Pancasila — siap menghadapi tantangan global dengan tetap berpijak pada nilai-nilai bangsa.
+      </p>
+      <div class="flex gap-4 mt-2">
+        <a href="https://www.sman19kotabekasi.sch.id/profil/sambutan-kepala-sekolah"
+           class="inline-flex items-center gap-2 text-sm font-bold text-gold hover:text-primary transition-colors group">
+          Baca Selengkapnya
+          <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" style="font-size:16px">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ KESISWAAN ═══════════════════════════════ -->
+  <section class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 items-center reveal">
+    <div class="flex flex-col gap-6 order-2 lg:order-1">
+      <span class="w-fit text-xs font-bold text-gold uppercase tracking-widest bg-amber-50 border border-amber-200 px-4 py-1.5 rounded-full">Kesiswaan & Karakter</span>
+      <h2 class="text-3xl md:text-4xl lg:text-[2.6rem] font-extrabold text-primary leading-tight">Pengembangan Minat, Bakat & Karakter</h2>
+      <p class="text-muted leading-relaxed">Kami membekali siswa dengan program unggulan untuk melatih kepemimpinan, kerohanian, dan kreativitas demi membentuk Profil Pelajar Pancasila yang autentik.</p>
+
+      <ul class="flex flex-col gap-4 mt-1">
+        <li class="flex items-start gap-4 bg-white rounded-2xl p-4 border border-border shadow-sm">
+          <div class="bg-amber-50 p-3 rounded-xl text-gold border border-amber-100 shrink-0">
+            <span class="material-symbols-outlined" style="font-size:24px;font-variation-settings:'FILL' 1">mosque</span>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-primary">Pembinaan Keimanan & Ketaqwaan</h4>
+            <p class="text-muted text-sm mt-1 leading-relaxed">Karakter religius melalui Sholat Dhuha Berjamaah, Tadarus, Jumsehat, dan pembinaan rohani rutin.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-4 bg-white rounded-2xl p-4 border border-border shadow-sm">
+          <div class="bg-amber-50 p-3 rounded-xl text-gold border border-amber-100 shrink-0">
+            <span class="material-symbols-outlined" style="font-size:24px;font-variation-settings:'FILL' 1">diversity_3</span>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-primary">Wadah Minat & Bakat</h4>
+            <p class="text-muted text-sm mt-1 leading-relaxed">OSIS, Pramuka, Paskibra, PMR, PKS, Pecinta Alam (PA), Karya Ilmiah Remaja (KIR), Drama Musikal, dan masih banyak lagi.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-4 bg-white rounded-2xl p-4 border border-border shadow-sm">
+          <div class="bg-amber-50 p-3 rounded-xl text-gold border border-amber-100 shrink-0">
+            <span class="material-symbols-outlined" style="font-size:24px;font-variation-settings:'FILL' 1">psychology</span>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-primary">Kokurikuler Kurikulum Merdeka</h4>
+            <p class="text-muted text-sm mt-1 leading-relaxed">Kegiatan Kokurikuler Fase E (Kelas X) & Fase F (Kelas XI) memperkuat Proyek Penguatan Profil Pelajar Pancasila (P5).</p>
+          </div>
+        </li>
+      </ul>
+
+      <a href="https://www.sman19kotabekasi.sch.id/ekstrakurikuler"
+         class="inline-flex items-center gap-2 text-sm font-bold text-gold hover:text-primary transition-colors group w-fit mt-1">
+        Lihat Semua Ekstrakurikuler
+        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" style="font-size:16px">arrow_forward</span>
+      </a>
+    </div>
+
+    <div class="order-1 lg:order-2 h-[300px] sm:h-[440px] w-full rounded-[2rem] overflow-hidden shadow-xl border-4 border-white sk-target sk">
+      <div class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-[1.03]"
+           style="background-image:url('https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=900&auto=format&fit=crop')">
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ SPMB ═══════════════════════════════ -->
+  <section id="spmb" class="reveal">
+    <!-- Header -->
+    <div class="text-center flex flex-col items-center gap-4 mb-12">
+      <span class="inline-flex items-center gap-2 text-xs font-bold text-gold uppercase tracking-widest bg-amber-50 border border-amber-200 px-4 py-1.5 rounded-full">
+        <span class="material-symbols-outlined" style="font-size:14px;font-variation-settings:'FILL' 1">how_to_reg</span>
+        SPMB — Seleksi Penerimaan Murid Baru
+      </span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary leading-tight max-w-2xl">
+        Penerimaan Peserta Didik Baru<br/>Tahun Ajaran 2026/2027
+      </h2>
+      <p class="text-muted max-w-xl leading-relaxed">
+        SMAN 19 Kota Bekasi membuka penerimaan peserta didik baru melalui 4 jalur seleksi resmi sesuai ketentuan Pemerintah Kota Bekasi. Pilih jalur yang sesuai dengan kondisi dan prestasi Anda.
+      </p>
+    </div>
+
+    <!-- Jalur Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+      <!-- Zonasi -->
+      <div class="jalur-card bg-white border border-border rounded-3xl p-6 flex flex-col gap-3 shadow-sm">
+        <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center border border-blue-100">
+          <span class="material-symbols-outlined text-blue-600" style="font-size:28px;font-variation-settings:'FILL' 1">location_on</span>
+        </div>
+        <div>
+          <div class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1">Jalur Zonasi</div>
+          <h3 class="text-xl font-black text-primary">50%</h3>
+          <p class="text-muted text-sm mt-2 leading-relaxed">Berdasarkan jarak tempat tinggal calon peserta didik ke sekolah menggunakan titik koordinat.</p>
+        </div>
+        <div class="mt-auto pt-2 border-t border-border">
+          <div class="text-xs text-muted">Kuota terbesar · Prioritas utama</div>
+        </div>
+      </div>
+
+      <!-- Afirmasi -->
+      <div class="jalur-card bg-white border border-border rounded-3xl p-6 flex flex-col gap-3 shadow-sm">
+        <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center border border-green-100">
+          <span class="material-symbols-outlined text-green-600" style="font-size:28px;font-variation-settings:'FILL' 1">volunteer_activism</span>
+        </div>
+        <div>
+          <div class="text-xs font-bold text-green-600 uppercase tracking-wider mb-1">Jalur Afirmasi</div>
+          <h3 class="text-xl font-black text-primary">15%</h3>
+          <p class="text-muted text-sm mt-2 leading-relaxed">Untuk calon peserta didik dari keluarga tidak mampu (penerima KIP/PKH/BPNT) atau penyandang disabilitas.</p>
+        </div>
+        <div class="mt-auto pt-2 border-t border-border">
+          <div class="text-xs text-muted">Wajib melampirkan bukti pendukung</div>
+        </div>
+      </div>
+
+      <!-- Perpindahan Tugas -->
+      <div class="jalur-card bg-white border border-border rounded-3xl p-6 flex flex-col gap-3 shadow-sm">
+        <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center border border-purple-100">
+          <span class="material-symbols-outlined text-purple-600" style="font-size:28px;font-variation-settings:'FILL' 1">swap_horiz</span>
+        </div>
+        <div>
+          <div class="text-xs font-bold text-purple-600 uppercase tracking-wider mb-1">Jalur Perpindahan Tugas</div>
+          <h3 class="text-xl font-black text-primary">5%</h3>
+          <p class="text-muted text-sm mt-2 leading-relaxed">Untuk anak guru/tenaga kependidikan yang bertugas di sekolah tujuan, atau yang orang tuanya pindah tugas.</p>
+        </div>
+        <div class="mt-auto pt-2 border-t border-border">
+          <div class="text-xs text-muted">Bukti SK mutasi diperlukan</div>
+        </div>
+      </div>
+
+      <!-- Prestasi -->
+      <div class="jalur-card bg-primary text-white rounded-3xl p-6 flex flex-col gap-3 shadow-sm">
+        <div class="w-14 h-14 gold-badge rounded-2xl flex items-center justify-center">
+          <span class="material-symbols-outlined text-white" style="font-size:28px;font-variation-settings:'FILL' 1">emoji_events</span>
+        </div>
+        <div>
+          <div class="text-xs font-bold text-amber-300 uppercase tracking-wider mb-1">Jalur Prestasi</div>
+          <h3 class="text-xl font-black">30%</h3>
+          <p class="text-slate-300 text-sm mt-2 leading-relaxed">Berdasarkan nilai rapor 5 semester dan/atau penghargaan di bidang akademik, seni, olahraga, atau keagamaan.</p>
+        </div>
+        <div class="mt-auto pt-2 border-t border-white/20">
+          <div class="text-xs text-slate-400">Sertifikat/piagam kejuaraan diunggah</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline & CTA -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Timeline strip -->
+      <div class="lg:col-span-2 bg-white border border-border rounded-3xl p-7 shadow-sm">
+        <h3 class="font-bold text-primary text-lg mb-5 flex items-center gap-2">
+          <span class="material-symbols-outlined text-gold" style="font-size:22px;font-variation-settings:'FILL' 1">calendar_month</span>
+          Jadwal Penting SPMB 2026
+        </h3>
+        <div class="flex flex-col gap-0">
+          <div class="flex items-start gap-4 pb-5 relative">
+            <div class="relative z-10 w-9 h-9 gold-badge rounded-full flex items-center justify-center shrink-0 shadow">
+              <span class="material-symbols-outlined text-white" style="font-size:16px">edit_document</span>
+            </div>
+            <div class="absolute left-4 top-9 bottom-0 w-px bg-border z-0"></div>
+            <div>
+              <div class="text-xs text-muted font-medium">Tahap 1</div>
+              <div class="text-sm font-bold text-primary">Pendaftaran & Verifikasi Berkas</div>
+              <div class="text-xs text-gold font-semibold mt-0.5">Pantau di website resmi SPMB</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 pb-5 relative">
+            <div class="relative z-10 w-9 h-9 bg-slate-100 rounded-full flex items-center justify-center shrink-0 border border-border">
+              <span class="material-symbols-outlined text-muted" style="font-size:16px">search</span>
+            </div>
+            <div class="absolute left-4 top-9 bottom-0 w-px bg-border z-0"></div>
+            <div>
+              <div class="text-xs text-muted font-medium">Tahap 2</div>
+              <div class="text-sm font-bold text-primary">Seleksi & Pengumuman Hasil</div>
+              <div class="text-xs text-muted font-medium mt-0.5">Pengumuman hasil seleksi tiap jalur</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 pb-5 relative">
+            <div class="relative z-10 w-9 h-9 bg-slate-100 rounded-full flex items-center justify-center shrink-0 border border-border">
+              <span class="material-symbols-outlined text-muted" style="font-size:16px">how_to_reg</span>
+            </div>
+            <div class="absolute left-4 top-9 bottom-0 w-px bg-border z-0"></div>
+            <div>
+              <div class="text-xs text-muted font-medium">Tahap 3</div>
+              <div class="text-sm font-bold text-primary">Daftar Ulang</div>
+              <div class="text-xs text-muted font-medium mt-0.5">
+                <a href="https://www.sman19kotabekasi.sch.id/dokumen-daftar-ulang-spmb-tahap-2" class="text-gold underline underline-offset-2">Unduh Dokumen Daftar Ulang Tahap 2 →</a>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-9 h-9 bg-slate-100 rounded-full flex items-center justify-center shrink-0 border border-border">
+              <span class="material-symbols-outlined text-muted" style="font-size:16px">school</span>
+            </div>
+            <div>
+              <div class="text-xs text-muted font-medium">Tahap 4</div>
+              <div class="text-sm font-bold text-primary">Masa Pengenalan Lingkungan Sekolah (MPLS)</div>
+              <div class="text-xs text-muted font-medium mt-0.5">Awal tahun ajaran 2026/2027</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick info card -->
+      <div class="bg-primary text-white rounded-3xl p-7 flex flex-col gap-5 shadow-sm">
+        <div class="w-12 h-12 gold-badge rounded-2xl flex items-center justify-center">
+          <span class="material-symbols-outlined" style="font-size:22px;font-variation-settings:'FILL' 1">info</span>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-1">Informasi SPMB</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">Pantau informasi terbaru, persyaratan dokumen, dan pengumuman hasil seleksi di halaman resmi SPMB kami.</p>
+        </div>
+        <ul class="flex flex-col gap-2 text-sm text-slate-300">
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-amber-300" style="font-size:16px;font-variation-settings:'FILL' 1">check_circle</span>
+            Formulir pendaftaran online
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-amber-300" style="font-size:16px;font-variation-settings:'FILL' 1">check_circle</span>
+            SK Penetapan Kelulusan tersedia
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-amber-300" style="font-size:16px;font-variation-settings:'FILL' 1">check_circle</span>
+            Dokumen daftar ulang tersedia
+          </li>
+        </ul>
+        <div class="flex flex-col gap-3 mt-auto">
+          <a href="https://www.sman19kotabekasi.sch.id/spmb-sman-19-kota-bekasi"
+             class="gold-badge rounded-full py-3 text-center text-sm font-bold hover:opacity-90 transition-opacity">
+            Halaman SPMB Lengkap
+          </a>
+          <a href="https://www.sman19kotabekasi.sch.id/sk-penetapan-kelulusan-sman-19-kota-bekasi"
+             class="bg-white/10 hover:bg-white/20 rounded-full py-3 text-center text-sm font-bold transition-colors">
+            SK Penetapan Kelulusan
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- WhatsApp CTA bar -->
+    <div class="mt-6 bg-green-50 border border-green-200 rounded-2xl px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center shrink-0">
+          <svg class="w-5 h-5 text-white fill-white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <div>
+          <div class="text-sm font-bold text-green-800">Hubungi Kami via WhatsApp</div>
+          <div class="text-xs text-green-600">Pertanyaan seputar SPMB &amp; informasi sekolah</div>
+        </div>
+      </div>
+      <a href="https://wa.me/+6281287623932"
+         class="bg-green-500 text-white rounded-full px-6 py-2.5 text-sm font-bold hover:bg-green-600 transition-colors shadow flex items-center gap-2 shrink-0">
+        Chat WhatsApp
+        <span class="material-symbols-outlined" style="font-size:16px">open_in_new</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ BERITA TERBARU ═══════════════════════════════ -->
+  <section class="flex flex-col gap-8 reveal">
+    <div class="flex flex-row justify-between items-end border-b border-border pb-4">
+      <div>
+        <div class="text-xs font-bold text-gold uppercase tracking-widest mb-2">Kabar Sekolah</div>
+        <h2 class="text-3xl font-extrabold text-primary">Berita Terbaru</h2>
+      </div>
+      <a href="https://www.sman19kotabekasi.sch.id/berita"
+         class="text-sm font-bold text-gold hover:text-primary transition-colors flex items-center gap-1 group shrink-0">
+        Lihat Semua
+        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" style="font-size:16px">arrow_forward</span>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+
+      <!-- Berita 1 -->
+      <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col border border-border">
+        <div class="h-48 overflow-hidden relative bg-slate-100">
+          <img alt="SNBT 2026 — SMAN 19 Kota Bekasi" loading="lazy"
+               class="news-img w-full h-full object-cover"
+               src="https://www.sman19kotabekasi.sch.id/upload/imagecache/14469503WhatsAppImage2026-05-25at18.19.58-480x360.jpeg"
+               onerror="this.src='https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop'"/>
+          <div class="absolute top-3 left-3 bg-primary/90 backdrop-blur-sm text-white tag px-3 py-1 rounded-full">Pendidikan</div>
+        </div>
+        <div class="p-6 flex flex-col gap-2 flex-grow">
+          <span class="text-xs font-bold text-gold tracking-widest uppercase">27 Mei 2026</span>
+          <h3 class="text-base font-bold text-primary leading-snug group-hover:text-gold transition-colors">
+            <a href="https://www.sman19kotabekasi.sch.id/berita/detail/995553/snbt-2026/">SNBT 2026</a>
+          </h3>
+          <p class="text-sm text-muted flex-grow line-clamp-3 mt-1">
+            Pelaksanaan dan persiapan menyeluruh bagi siswa kelas XII SMAN 19 Bekasi dalam menghadapi Seleksi Nasional Berdasarkan Tes menuju PTN impian.
+          </p>
+          <a href="https://www.sman19kotabekasi.sch.id/berita/detail/995553/snbt-2026/" class="inline-flex items-center gap-1 text-xs font-bold text-gold mt-2 hover:text-primary transition-colors">
+            Selengkapnya <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Berita 2 -->
+      <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col border border-border">
+        <div class="h-48 overflow-hidden relative bg-slate-100">
+          <img alt="Sosialisasi SPMB 2026 — SMAN 19 Kota Bekasi" loading="lazy"
+               class="news-img w-full h-full object-cover"
+               src="https://www.sman19kotabekasi.sch.id/upload/imagecache/34537503WhatsAppImage2026-05-25at06.07.09-480x360.jpeg"
+               onerror="this.src='https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop'"/>
+          <div class="absolute top-3 left-3 bg-primary/90 backdrop-blur-sm text-white tag px-3 py-1 rounded-full">SPMB</div>
+        </div>
+        <div class="p-6 flex flex-col gap-2 flex-grow">
+          <span class="text-xs font-bold text-gold tracking-widest uppercase">27 Mei 2026</span>
+          <h3 class="text-base font-bold text-primary leading-snug group-hover:text-gold transition-colors">
+            <a href="https://www.sman19kotabekasi.sch.id/berita/detail/995552/sosialisasi-spmb-2026/">Sosialisasi SPMB 2026</a>
+          </h3>
+          <p class="text-sm text-muted flex-grow line-clamp-3 mt-1">
+            Penyampaian informasi tahapan Seleksi Penerimaan Murid Baru dan penerimaan peserta didik baru secara transparan kepada orang tua calon siswa.
+          </p>
+          <a href="https://www.sman19kotabekasi.sch.id/berita/detail/995552/sosialisasi-spmb-2026/" class="inline-flex items-center gap-1 text-xs font-bold text-gold mt-2 hover:text-primary transition-colors">
+            Selengkapnya <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Berita 3 -->
+      <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col border border-border">
+        <div class="h-48 overflow-hidden relative bg-slate-100">
+          <img alt="Kokurikuler Fase E Kelas X — SMAN 19 Bekasi" loading="lazy"
+               class="news-img w-full h-full object-cover"
+               src="https://www.sman19kotabekasi.sch.id/upload/imagecache/79366471WhatsAppImage2026-05-23at23.53.26(1)-480x360.jpeg"
+               onerror="this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop'"/>
+          <div class="absolute top-3 left-3 bg-primary/90 backdrop-blur-sm text-white tag px-3 py-1 rounded-full">Kegiatan Siswa</div>
+        </div>
+        <div class="p-6 flex flex-col gap-2 flex-grow">
+          <span class="text-xs font-bold text-gold tracking-widest uppercase">24 Mei 2026</span>
+          <h3 class="text-base font-bold text-primary leading-snug group-hover:text-gold transition-colors">
+            <a href="https://www.sman19kotabekasi.sch.id/berita/detail/995515/kokurikuler-fase-e-kelas-x/">Kokurikuler Fase E (Kelas X)</a>
+          </h3>
+          <p class="text-sm text-muted flex-grow line-clamp-3 mt-1">
+            Kegiatan kokurikuler kolaboratif Kelas X dalam program Kurikulum Merdeka untuk memperkuat karakter dan Profil Pelajar Pancasila.
+          </p>
+          <a href="https://www.sman19kotabekasi.sch.id/berita/detail/995515/kokurikuler-fase-e-kelas-x/" class="inline-flex items-center gap-1 text-xs font-bold text-gold mt-2 hover:text-primary transition-colors">
+            Selengkapnya <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Berita 4 -->
+      <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col border border-border">
+        <div class="h-48 overflow-hidden relative bg-slate-100">
+          <img alt="Kokurikuler Fase F Kelas XI — SMAN 19 Bekasi" loading="lazy"
+               class="news-img w-full h-full object-cover"
+               src="https://www.sman19kotabekasi.sch.id/upload/imagecache/14126981WhatsAppImage2026-05-21at02.21.54-480x360.jpeg"
+               onerror="this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop'"/>
+          <div class="absolute top-3 left-3 bg-primary/90 backdrop-blur-sm text-white tag px-3 py-1 rounded-full">Kegiatan Siswa</div>
+        </div>
+        <div class="p-6 flex flex-col gap-2 flex-grow">
+          <span class="text-xs font-bold text-gold tracking-widest uppercase">24 Mei 2026</span>
+          <h3 class="text-base font-bold text-primary leading-snug group-hover:text-gold transition-colors">
+            <a href="https://www.sman19kotabekasi.sch.id/berita/detail/995514/kokurikuler-fase-f-kelas-xi/">Kokurikuler Fase F (Kelas XI)</a>
+          </h3>
+          <p class="text-sm text-muted flex-grow line-clamp-3 mt-1">
+            Penguatan karakter Kelas XI melalui kegiatan kokurikuler sesuai Kurikulum Merdeka guna mempersiapkan siswa menghadapi jenjang berikutnya.
+          </p>
+          <a href="https://www.sman19kotabekasi.sch.id/berita/detail/995514/kokurikuler-fase-f-kelas-xi/" class="inline-flex items-center gap-1 text-xs font-bold text-gold mt-2 hover:text-primary transition-colors">
+            Selengkapnya <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Berita 5 -->
+      <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col border border-border">
+        <div class="h-48 overflow-hidden relative bg-slate-100">
+          <img alt="Kokurikuler 2026 — SMAN 19 Bekasi" loading="lazy"
+               class="news-img w-full h-full object-cover"
+               src="https://www.sman19kotabekasi.sch.id/upload/imagecache/90173680WhatsAppImage2026-05-17at17.10.09-480x360.jpeg"
+               onerror="this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop'"/>
+          <div class="absolute top-3 left-3 bg-primary/90 backdrop-blur-sm text-white tag px-3 py-1 rounded-full">Kurikulum</div>
+        </div>
+        <div class="p-6 flex flex-col gap-2 flex-grow">
+          <span class="text-xs font-bold text-gold tracking-widest uppercase">19 Mei 2026</span>
+          <h3 class="text-base font-bold text-primary leading-snug group-hover:text-gold transition-colors">
+            <a href="https://www.sman19kotabekasi.sch.id/berita/detail/995461/kokurikuler-2026/">KOKURIKULER 2026</a>
+          </h3>
+          <p class="text-sm text-muted flex-grow line-clamp-3 mt-1">
+            Program kokurikuler tahun 2026 resmi berjalan — memperkuat Kurikulum Merdeka dengan kegiatan berbasis proyek yang bermakna bagi peserta didik.
+          </p>
+          <a href="https://www.sman19kotabekasi.sch.id/berita/detail/995461/kokurikuler-2026/" class="inline-flex items-center gap-1 text-xs font-bold text-gold mt-2 hover:text-primary transition-colors">
+            Selengkapnya <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Berita 6 -->
+      <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col border border-border">
+        <div class="h-48 overflow-hidden relative bg-slate-100">
+          <img alt="Penyerahan Penghargaan Siswa Berprestasi — SMAN 19 Bekasi" loading="lazy"
+               class="news-img w-full h-full object-cover"
+               src="https://www.sman19kotabekasi.sch.id/upload/imagecache/71894690WhatsAppImage2026-05-11at05.43.18-480x360.jpeg"
+               onerror="this.src='https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=800&auto=format&fit=crop'"/>
+          <div class="absolute top-3 left-3 gold-badge text-white tag px-3 py-1 rounded-full">Prestasi</div>
+        </div>
+        <div class="p-6 flex flex-col gap-2 flex-grow">
+          <span class="text-xs font-bold text-gold tracking-widest uppercase">18 Mei 2026</span>
+          <h3 class="text-base font-bold text-primary leading-snug group-hover:text-gold transition-colors">
+            <a href="https://www.sman19kotabekasi.sch.id/berita/detail/995458/penyerahan-penghargaan-kepada-siswa-yang-berprestasi/">Penyerahan Penghargaan Siswa Berprestasi</a>
+          </h3>
+          <p class="text-sm text-muted flex-grow line-clamp-3 mt-1">
+            Apresiasi dan penyerahan penghargaan kepada para siswa SMAN 19 Kota Bekasi yang telah meraih prestasi gemilang di tingkat kota maupun provinsi.
+          </p>
+          <a href="https://www.sman19kotabekasi.sch.id/berita/detail/995458/penyerahan-penghargaan-kepada-siswa-yang-berprestasi/" class="inline-flex items-center gap-1 text-xs font-bold text-gold mt-2 hover:text-primary transition-colors">
+            Selengkapnya <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ VIDEO PELEPASAN ═══════════════════════════════ -->
+  <section class="reveal">
+    <div class="bg-primary rounded-3xl overflow-hidden shadow-xl">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+        <div class="p-8 md:p-12 flex flex-col justify-center gap-5">
+          <span class="w-fit text-xs font-bold text-amber-300 uppercase tracking-widest bg-white/10 border border-white/20 px-4 py-1.5 rounded-full">Galeri Video</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white leading-tight">Pelepasan &amp; Ketamatan<br/>Kelas XII Angkatan 5</h2>
+          <p class="text-slate-300 text-sm leading-relaxed">Momen bersejarah pelepasan dan ketamatan belajar siswa Kelas XII SMAN 19 Kota Bekasi Angkatan ke-5. Sebuah perjalanan panjang yang penuh kenangan.</p>
+          <div class="flex gap-3">
+            <a href="https://www.youtube.com/channel/UCWLKy-8qdcVtagCWZ7w8Jnw"
+               class="inline-flex items-center gap-2 bg-red-600 text-white rounded-full px-5 py-2.5 text-sm font-bold hover:bg-red-700 transition-colors">
+              <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+              YouTube Channel
+            </a>
+            <a href="https://www.sman19kotabekasi.sch.id/galeri"
+               class="inline-flex items-center gap-2 bg-white/10 text-white rounded-full px-5 py-2.5 text-sm font-bold hover:bg-white/20 transition-colors border border-white/20">
+              Semua Galeri
+            </a>
+          </div>
+        </div>
+        <div class="relative aspect-video lg:aspect-auto lg:min-h-[260px] bg-black">
+          <iframe
+            src="https://www.youtube.com/embed/xadN8bkqPA4?si=jK5iBkcYvlWrNvUQ"
+            title="Pelepasan Kelas XII 2026 SMAN 19 Kota Bekasi"
+            class="absolute inset-0 w-full h-full"
+            allowfullscreen
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<footer class="bg-primary text-white mt-12">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 pt-14 pb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+    <!-- Sekolah -->
+    <div class="lg:col-span-2 flex flex-col gap-5">
+      <div class="flex items-center gap-3">
+        <img src="https://www.sman19kotabekasi.sch.id/upload/imagecache/46187746logo19-100x100.jpg"
+             alt="Logo SMAN 19" class="w-12 h-12 logo-white shrink-0"/>
+        <div>
+          <div class="text-[11px] text-slate-400 font-medium uppercase tracking-wider">SMA Negeri</div>
+          <div class="text-lg font-extrabold tracking-tight">19 Kota Bekasi</div>
+        </div>
+      </div>
+      <p class="text-slate-300 text-sm leading-relaxed max-w-sm">
+        Jl. Mawar VA RT.002/RW.002 Kel. Padurenan,<br/>Kec. Mustika Jaya, Kota Bekasi, Jawa Barat.
+      </p>
+      <div class="flex gap-2.5 mt-1">
+        <a href="mailto:bekasisman19@gmail.com" aria-label="Email"
+           class="w-9 h-9 rounded-full bg-white/10 hover:bg-gold hover:scale-105 flex items-center justify-center transition-all duration-300">
+          <span class="material-symbols-outlined" style="font-size:17px">mail</span>
+        </a>
+        <a href="https://wa.me/+6281287623932" aria-label="WhatsApp"
+           class="w-9 h-9 rounded-full bg-white/10 hover:bg-green-500 hover:scale-105 flex items-center justify-center transition-all duration-300">
+          <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="https://instagram.com/sman19kotabekasi" aria-label="Instagram"
+           class="w-9 h-9 rounded-full bg-white/10 hover:bg-pink-600 hover:scale-105 flex items-center justify-center transition-all duration-300">
+          <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/channel/UCWLKy-8qdcVtagCWZ7w8Jnw" aria-label="YouTube"
+           class="w-9 h-9 rounded-full bg-white/10 hover:bg-red-600 hover:scale-105 flex items-center justify-center transition-all duration-300">
+          <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </a>
+        <a href="https://twitter.com/sman19_bekasi" aria-label="Twitter / X"
+           class="w-9 h-9 rounded-full bg-white/10 hover:bg-sky-500 hover:scale-105 flex items-center justify-center transition-all duration-300">
+          <svg class="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Tautan Cepat -->
+    <div class="flex flex-col gap-4">
+      <h4 class="text-sm font-bold text-white border-b border-white/15 pb-2">Tautan Cepat</h4>
+      <nav class="flex flex-col gap-2.5 text-sm text-slate-300">
+        <a href="https://www.sman19kotabekasi.sch.id/visi-dan-misi" class="hover:text-gold hover:translate-x-1 transition-all duration-200 flex items-center gap-1.5">
+          <span class="material-symbols-outlined opacity-50" style="font-size:14px">chevron_right</span>Visi &amp; Misi
+        </a>
+        <a href="https://www.sman19kotabekasi.sch.id/struktur-organisasi" class="hover:text-gold hover:translate-x-1 transition-all duration-200 flex items-center gap-1.5">
+          <span class="material-symbols-outlined opacity-50" style="font-size:14px">chevron_right</span>Struktur Organisasi
+        </a>
+        <a href="https://www.sman19kotabekasi.sch.id/ekstrakurikuler" class="hover:text-gold hover:translate-x-1 transition-all duration-200 flex items-center gap-1.5">
+          <span class="material-symbols-outlined opacity-50" style="font-size:14px">chevron_right</span>Ekstrakurikuler
+        </a>
+        <a href="https://www.sman19kotabekasi.sch.id/berita" class="hover:text-gold hover:translate-x-1 transition-all duration-200 flex items-center gap-1.5">
+          <span class="material-symbols-outlined opacity-50" style="font-size:14px">chevron_right</span>Berita
+        </a>
+        <a href="https://www.sman19kotabekasi.sch.id/galeri" class="hover:text-gold hover:translate-x-1 transition-all duration-200 flex items-center gap-1.5">
+          <span class="material-symbols-outlined opacity-50" style="font-size:14px">chevron_right</span>Galeri
+        </a>
+        <a href="https://www.sman19kotabekasi.sch.id/buku-tamu" class="hover:text-gold hover:translate-x-1 transition-all duration-200 flex items-center gap-1.5">
+          <span class="material-symbols-outlined opacity-50" style="font-size:14px">chevron_right</span>Buku Tamu
+        </a>
+        <a href="https://www.sman19kotabekasi.sch.id/lokasi" class="hover:text-gold hover:translate-x-1 transition-all duration-200 flex items-center gap-1.5">
+          <span class="material-symbols-outlined opacity-50" style="font-size:14px">chevron_right</span>Lokasi Sekolah
+        </a>
+      </nav>
+    </div>
+
+    <!-- SPMB & Info -->
+    <div class="flex flex-col gap-4">
+      <h4 class="text-sm font-bold text-white border-b border-white/15 pb-2">SPMB &amp; Informasi</h4>
+      <div class="flex flex-col gap-3">
+        <a href="https://www.sman19kotabekasi.sch.id/spmb-sman-19-kota-bekasi"
+           class="gold-badge rounded-xl px-4 py-3 text-sm font-bold text-center hover:opacity-90 transition-opacity">
+          Portal SPMB 2026
+        </a>
+        <a href="https://www.sman19kotabekasi.sch.id/sk-penetapan-kelulusan-sman-19-kota-bekasi"
+           class="bg-white/10 hover:bg-white/20 rounded-xl px-4 py-3 text-sm font-semibold text-center transition-colors">
+          SK Penetapan Kelulusan
+        </a>
+        <a href="https://www.sman19kotabekasi.sch.id/dokumen-daftar-ulang-spmb-tahap-2"
+           class="bg-white/10 hover:bg-white/20 rounded-xl px-4 py-3 text-sm font-semibold text-center transition-colors">
+          Dokumen Daftar Ulang Tahap 2
+        </a>
+      </div>
+      <div class="mt-1 bg-white/5 border border-white/10 p-4 rounded-xl">
+        <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-1">Kepala Sekolah</div>
+        <div class="text-sm font-bold text-white">Siwi Widyasaputri, S.Pd., M.Pd.</div>
+        <div class="text-xs text-slate-400 font-mono mt-0.5">NIP. 197405142006042011</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10 py-5 text-center text-slate-400 text-xs px-6">
+    © 2026 SMA Negeri 19 Kota Bekasi. All rights reserved. ·
+    <a href="https://www.sman19kotabekasi.sch.id" class="hover:text-gold transition-colors">sman19kotabekasi.sch.id</a>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // ─── 1. Skeleton Loader ───
+    setTimeout(() => {
+      document.querySelectorAll('.sk-target').forEach(el => el.classList.remove('sk','sk-target'));
+    }, 1100);
+
+    // ─── 2. Scroll Reveal ───
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // ─── 3. Mobile Menu ───
+    const hamBtn  = document.getElementById('ham-btn');
+    const hamIcon = document.getElementById('ham-icon');
+    const mobMenu = document.getElementById('mob-menu');
+    let open = false;
+    hamBtn.addEventListener('click', () => {
+      open = !open;
+      mobMenu.classList.toggle('open', open);
+      hamIcon.textContent = open ? 'close' : 'menu';
+    });
+
+    // ─── 4. Topbar shadow on scroll ───
+    const topbar = document.getElementById('topbar');
+    window.addEventListener('scroll', () => {
+      topbar.style.boxShadow = window.scrollY > 10 ? '0 4px 24px rgba(15,23,42,.12)' : '';
+    }, { passive: true });
+  });
+</script>
+</body>
+</html>
